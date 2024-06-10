@@ -5,10 +5,10 @@
       "dom",
       "es2017" // required: es2017+
     ],
-    "target": "es2018",
+    "target": "ESNext",
+    "module": "NodeNext",
     "outDir": "dist",
-    "module": "node16",
-    "moduleResolution": "node",
+    "moduleResolution": "NodeNext",
     "strict": true,
     "downlevelIteration": true, // required
     "declaration": true,
@@ -19,7 +19,7 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "skipLibCheck": true,
-    "noEmit": true,
+    "noEmit": false,
     "incremental": true
   },
   "include": [
