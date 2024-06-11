@@ -78,3 +78,4 @@
 {"level":"info","message":"POST /auth/authorize?provider=builtin%3A%3Aoauth_github"}
 {"level":"info","message":"POST /auth/authorize?provider=builtin%3A%3Aoauth_github"}
 {"level":"info","message":"POST /auth/authorize?provider=builtin%3A%3Aoauth_github"}
+{"level":"info","message":"POST /auth/authorize?provider=builtin%3A%3Aoauth_github"}

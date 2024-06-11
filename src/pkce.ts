@@ -26,8 +26,6 @@ const SERVER_PORT = 3000;
  * Generate a random Base64 url-encoded string, and derive a "challenge"
  * string from that string to use as proof that the request for a token
  * later is made from the same user agent that made the original request
- *
- * @returns {Object} The verifier and challenge strings
  */
 const generatePKCE = () => {
   logger.debug("Generating PKCE...");
@@ -76,9 +74,6 @@ const client = createClient({});
  * Redirects OAuth requests to EdgeDB Auth OAuth authorize redirect
  * with the PKCE challenge, and saves PKCE verifier in an HttpOnly
  * cookie for later retrieval.
- *
- * @param {Request} req
- * @param {Response} res
  */
 const handleAuthorize: RequestListener = async (
   req,
@@ -121,9 +116,6 @@ const handleAuthorize: RequestListener = async (
 /**
  * Handles the PKCE callback and exchanges the `code` and `verifier
  * for an auth_token, setting the auth_token as an HttpOnly cookie.
- *
- * @param {Request} req
- * @param {Response} res
  */
 const handleCallback: RequestListener = async (req, res) => {
   logger.debug("Handling callback request...");
