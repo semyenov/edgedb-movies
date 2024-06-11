@@ -1,7 +1,9 @@
 import { createClient } from "edgedb";
 import e from "./dbschema/edgeql-js";
 
-const client = createClient({});
+const client = createClient({
+  branch: "edgedb",
+});
 
 async function run() {
   const query = e.select(e.Movie, (movie) => ({
@@ -12,10 +14,8 @@ async function run() {
       id: true,
       name: true,
       "@character_name": true,
-
       order_by: actor.name,
     }),
-
     filter: e.op(movie.title, "ilike", "%avengers%"),
     order_by: movie.release_year,
   }));
