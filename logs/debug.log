@@ -1,0 +1,53 @@
+{"level":"info","message":"Server running on http://localhost:3000"}
+{"level":"debug","message":"Incoming request: POST /auth/authorize?provider=builtin%3A%3Aoauth_github"}
+{"level":"debug","message":"Getting request URL..."}
+{"level":"debug","message":"Request URL: http://localhost:3000/auth/authorize?provider=builtin%3A%3Aoauth_github"}
+{"level":"debug","message":"Parsed URL: /auth/authorize"}
+{"level":"info","message":"POST /auth/authorize?provider=builtin%3A%3Aoauth_github"}
+{"level":"debug","message":"Handling authorize request..."}
+{"level":"debug","message":"Getting request URL..."}
+{"level":"debug","message":"Request URL: http://localhost:3000/auth/authorize?provider=builtin%3A%3Aoauth_github"}
+{"level":"debug","message":"Provider: builtin::oauth_github"}
+{"level":"debug","message":"Generating PKCE..."}
+{"level":"debug","message":"Verifier generated: uG7A2v0uMI3BpMSJQcOuzDSeY-FuRhlmU7bJWMkRPn4"}
+{"level":"debug","message":"Challenge generated: jSGrd30B27b2WWitSRCGpAaKqTj-CnmZMJixCcwCizc"}
+{"level":"debug","message":"Redirect URL: http://localhost:10700/db/main/ext/auth/authorize?provider=builtin%3A%3Aoauth_github&challenge=jSGrd30B27b2WWitSRCGpAaKqTj-CnmZMJixCcwCizc&redirect_to=http%3A%2F%2Flocalhost%3A3000%2Fauth%2Fcallback&redirect_to_on_signup=http%3A%2F%2Flocalhost%3A3000%2Fauth%2Fcallback%3FisSignUp%3Dtrue"}
+{"level":"debug","message":"Incoming request: POST /auth/authorize?provider=builtin%3A%3Aoauth_github"}
+{"level":"debug","message":"Getting request URL..."}
+{"level":"debug","message":"Request URL: http://localhost:3000/auth/authorize?provider=builtin%3A%3Aoauth_github"}
+{"level":"debug","message":"Parsed URL: /auth/authorize"}
+{"level":"info","message":"POST /auth/authorize?provider=builtin%3A%3Aoauth_github"}
+{"level":"debug","message":"Handling authorize request..."}
+{"level":"debug","message":"Getting request URL..."}
+{"level":"debug","message":"Request URL: http://localhost:3000/auth/authorize?provider=builtin%3A%3Aoauth_github"}
+{"level":"debug","message":"Provider: builtin::oauth_github"}
+{"level":"debug","message":"Generating PKCE..."}
+{"level":"debug","message":"Verifier generated: U0hZCxINo9-fWeCwsF-LnND3CMm1Uglh4MNkDZGyRx4"}
+{"level":"debug","message":"Challenge generated: QWe5hnMdY-Nms2LClgazZEQ8_xty73MPRGmxJdIdGLk"}
+{"level":"debug","message":"Redirect URL: http://localhost:10700/db/main/ext/auth/authorize?provider=builtin%3A%3Aoauth_github&challenge=QWe5hnMdY-Nms2LClgazZEQ8_xty73MPRGmxJdIdGLk&redirect_to=http%3A%2F%2Flocalhost%3A3000%2Fauth%2Fcallback&redirect_to_on_signup=http%3A%2F%2Flocalhost%3A3000%2Fauth%2Fcallback%3FisSignUp%3Dtrue"}
+{"level":"debug","message":"Incoming request: POST /auth/authorize?provider=builtin%3A%3Aoauth_github"}
+{"level":"debug","message":"Getting request URL..."}
+{"level":"debug","message":"Request URL: http://localhost:3000/auth/authorize?provider=builtin%3A%3Aoauth_github"}
+{"level":"debug","message":"Parsed URL: /auth/authorize"}
+{"level":"info","message":"POST /auth/authorize?provider=builtin%3A%3Aoauth_github"}
+{"level":"debug","message":"Handling authorize request..."}
+{"level":"debug","message":"Getting request URL..."}
+{"level":"debug","message":"Request URL: http://localhost:3000/auth/authorize?provider=builtin%3A%3Aoauth_github"}
+{"level":"debug","message":"Provider: builtin::oauth_github"}
+{"level":"debug","message":"Generating PKCE..."}
+{"level":"debug","message":"Verifier generated: hZcZtE1kavIFS6qvAWU_-qgpamzax6qbFeYTBSnkTLE"}
+{"level":"debug","message":"Challenge generated: O0BkTJcmp-lR2UB1Q7XuSgY0c2Wm5FTtYO2rtuLAAG0"}
+{"level":"debug","message":"Redirect URL: http://localhost:10700/db/main/ext/auth/authorize?provider=builtin%3A%3Aoauth_github&challenge=O0BkTJcmp-lR2UB1Q7XuSgY0c2Wm5FTtYO2rtuLAAG0&redirect_to=http%3A%2F%2Flocalhost%3A3000%2Fauth%2Fcallback&redirect_to_on_signup=http%3A%2F%2Flocalhost%3A3000%2Fauth%2Fcallback%3FisSignUp%3Dtrue"}
+{"level":"debug","message":"Incoming request: POST /auth/authorize?provider=builtin%3A%3Aoauth_github"}
+{"level":"debug","message":"Getting request URL..."}
+{"level":"debug","message":"Request URL: http://localhost:3000/auth/authorize?provider=builtin%3A%3Aoauth_github"}
+{"level":"debug","message":"Parsed URL: /auth/authorize"}
+{"level":"info","message":"POST /auth/authorize?provider=builtin%3A%3Aoauth_github"}
+{"level":"debug","message":"Handling authorize request..."}
+{"level":"debug","message":"Getting request URL..."}
+{"level":"debug","message":"Request URL: http://localhost:3000/auth/authorize?provider=builtin%3A%3Aoauth_github"}
+{"level":"debug","message":"Provider: builtin::oauth_github"}
+{"level":"debug","message":"Generating PKCE..."}
+{"level":"debug","message":"Verifier generated: ZzOiMzKxW_BNzayWX66fbhZWHw-sAe6qAK1EUPt-NSA"}
+{"level":"debug","message":"Challenge generated: 93sSRhtti_poUvNokS4TI3Pstm2XlNZ01HRcxyX0VLM"}
+{"level":"debug","message":"Redirect URL: http://localhost:10700/db/main/ext/auth/authorize?provider=builtin%3A%3Aoauth_github&challenge=93sSRhtti_poUvNokS4TI3Pstm2XlNZ01HRcxyX0VLM&redirect_to=http%3A%2F%2Flocalhost%3A3000%2Fauth%2Fcallback&redirect_to_on_signup=http%3A%2F%2Flocalhost%3A3000%2Fauth%2Fcallback%3FisSignUp%3Dtrue"}

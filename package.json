@@ -14,7 +14,8 @@
   "author": "Colin McDonnell",
   "license": "ISC",
   "dependencies": {
-    "edgedb": "^1.5.7"
+    "edgedb": "^1.5.7",
+    "winston": "^3.13.0"
   },
   "devDependencies": {
     "@edgedb/generate": "^0.5.3",
