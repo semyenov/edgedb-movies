@@ -10,7 +10,7 @@ const logger = winston.createLogger({
   transports: [
     new winston.transports.Console(),
     new winston.transports.File({ filename: "logs/debug.log", level: "debug" }),
-    new winston.transports.File({ filename: "logs/combined.log" }),
+    new winston.transports.File({ filename: "logs/errors.log", level: "error" }),
   ],
 });
 
@@ -19,8 +19,8 @@ const logger = winston.createLogger({
  * Value should be:
  * `${protocol}://${host}:${port}/branch/${branch}/ext/auth/
  */
-const EDGEDB_AUTH_BASE_URL = process.env.EDGEDB_AUTH_BASE_URL;
 const SERVER_PORT = 3000;
+const EDGEDB_AUTH_BASE_URL = process.env.EDGEDB_AUTH_BASE_URL;
 
 /**
  * Generate a random Base64 url-encoded string, and derive a "challenge"
@@ -42,10 +42,7 @@ const generatePKCE = () => {
 };
 
 const server = http.createServer(async (req, res) => {
-  logger.debug(`Incoming request: ${req.method} ${req.url}`);
   const requestUrl = getRequestUrl(req);
-  logger.debug(`Parsed URL: ${requestUrl.pathname}`);
-
   logger.info(`${req.method} ${req.url}`);
 
   switch (requestUrl.pathname) {
@@ -79,10 +76,10 @@ const handleAuthorize: RequestListener = async (
   req,
   res,
 ) => {
-  logger.debug("Handling authorize request...");
+  logger.debug("Authorize request...");
   const requestUrl = getRequestUrl(req);
   const provider = requestUrl.searchParams.get("provider");
-  logger.debug(`Provider: ${provider}`);
+  logger.debug(`Authorize Provider: ${provider}`);
 
   if (!provider) {
     logger.debug("No provider found in search parameters");
@@ -104,10 +101,10 @@ const handleAuthorize: RequestListener = async (
     `http://localhost:${SERVER_PORT}/auth/callback?isSignUp=true`,
   );
 
-  logger.debug(`Redirect URL: ${redirectUrl.href}`);
+  logger.debug(`Authorize URL: ${redirectUrl.href}`);
   res.writeHead(302, {
     "Set-Cookie":
-      `edgedb-pkce-verifier=${pkce.verifier}; HttpOnly; Path=/; Secure; SameSite=Strict`,
+      `edgedb-pkce-verifier=${pkce.verifier}; HttpOnly; Path=/; Secure;  SameSite=Strict`,
     Location: redirectUrl.href,
   });
   res.end();
@@ -118,9 +115,11 @@ const handleAuthorize: RequestListener = async (
  * for an auth_token, setting the auth_token as an HttpOnly cookie.
  */
 const handleCallback: RequestListener = async (req, res) => {
-  logger.debug("Handling callback request...");
+  logger.debug("Callback request...");
   const requestUrl = getRequestUrl(req);
-  logger.debug(`Parsed URL: ${requestUrl.href}`);
+  logger.debug(`Callback URL: ${requestUrl.href}`);
+
+  console.log(req);
 
   const code = requestUrl.searchParams.get("code");
   if (!code) {
@@ -182,19 +181,17 @@ const handleCallback: RequestListener = async (req, res) => {
   `);
   }
 
+  logger.debug(`Auth Token: ${auth_token}`);
+
   res.writeHead(204, {
-    "Set-Cookie": `dgedb-auth-token=${auth_token}; 
-      HttpOnly; 
-      Path=/; 
-      Secure; 
-      SameSite=Strict`,
+    "Set-Cookie": `edgedb-auth-token=${auth_token}; HttpOnly; Path=/; Secure; SameSite=Strict`,
   });
   res.end();
 };
 
 const getRequestUrl = (req: http.IncomingMessage) => {
   logger.debug("Getting request URL...");
-  const url = new URL(req.url!, `http://${req.headers.host}/`);
+  const url = new URL(req.url!, `http://${req.headers.host}`);
   logger.debug(`Request URL: ${url.href}`);
   return url;
 };
