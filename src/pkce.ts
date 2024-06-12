@@ -1,7 +1,7 @@
 // src/pkceGenerator.ts
 import crypto from "node:crypto";
 
-import logger from "./logger";
+import l from "./logger";
 
 const generatePKCE = () => {
   const verifier = crypto.randomBytes(32).toString("base64url");
@@ -9,7 +9,7 @@ const generatePKCE = () => {
     "base64url",
   );
 
-  logger.debug(`PKCE: ${verifier} ${challenge}`);
+  l.debug(`PKCE: ${verifier} ${challenge}`);
   return { verifier, challenge };
 };
 

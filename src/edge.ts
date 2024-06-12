@@ -11,6 +11,6 @@ const connectOptions: ConnectOptions = {
   logging: true,
 };
 
-export const client = createClient(connectOptions);
+const e = createClient(connectOptions);
 
-export default client;
+export default e;

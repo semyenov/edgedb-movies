@@ -3,20 +3,26 @@ import winston from "winston";
 
 const logger = winston.createLogger({
   level: "info",
+
   transports: [
     new winston.transports.Console({
-      format: winston.format.prettyPrint(),
       level: "debug",
+      format: winston.format.combine(
+        winston.format.colorize(),
+        winston.format.simple(),
+      ),
     }),
+
     new winston.transports.File({
+      level: "debug",
       filename: "logs/debug.log",
       format: winston.format.json(),
-      level: "debug",
     }),
+
     new winston.transports.File({
+      level: "error",
       filename: "logs/errors.log",
       format: winston.format.json(),
-      level: "error",
     }),
   ],
 });

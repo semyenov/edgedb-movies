@@ -1,25 +1,28 @@
 // src/index.ts
 import { createServer } from "node:http";
-import { createApp, createRouter, eventHandler, toNodeListener } from "h3";
+import { createApp, eventHandler, toNodeListener } from "h3";
 
-import { BASE_URL, SERVER_HOST, SERVER_PORT } from "./env";
-import { handleAuthorize, handleCallback } from "./oauthHandlers";
+import c from "./config";
+import l from "./logger";
+import r from "./router";
 
-import logger from "./logger";
+const a = createApp()
+  .use(r)
+  .use(
+    "*",
+    eventHandler((event) => {
+      l.debug(`Request: ${event.node.req.url}`);
+    }),
+  );
 
-const app = createApp();
-const server = createServer(toNodeListener(app));
-const router = createRouter()
-  .get("/auth/authorize", handleAuthorize)
-  .get("/auth/callback", handleCallback);
+const listener = toNodeListener(a);
+const server = createServer(listener);
 
-app.use(router.handler);
-app.use(eventHandler((event) => {
-  logger.debug(`Request: ${event.node.req.url}`);
-}));
-
-server.listen({ host: SERVER_HOST, port: SERVER_PORT }, () => {
-  logger.info(`Listening on ${BASE_URL})`);
+server.listen({
+  host: c.SERVER_HOST,
+  port: c.SERVER_PORT,
+}, () => {
+  l.info(`Listening on ${c.BASE_URL}`);
 });
 
-export default server;
+export default a;

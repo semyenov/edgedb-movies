@@ -1,5 +1,3 @@
-DEBUG=*
-
 BASE_URL=http://localhost:3000
 
 EDGEDB_BASE_URL=http://localhost:10700/db/main

@@ -15,9 +15,9 @@
       "h3",
     ],
     "target": "ESNext",
-    "module": "NodeNext",
+    "module": "ESNext",
     "outDir": "dist",
-    "moduleResolution": "NodeNext",
+    "moduleResolution": "Bundler",
     "strict": true,
     "downlevelIteration": true, // required
     "declaration": true,
@@ -32,11 +32,7 @@
     "incremental": true
   },
   "include": [
-    // "src/*",
-    // "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    "seed.mjs"
+    "src/**/*",
   ],
   "exclude": [
     "node_modules",
