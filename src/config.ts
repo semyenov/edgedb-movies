@@ -46,6 +46,6 @@ const u = new URL(c.BASE_URL);
 c.SERVER_HOST = u.hostname;
 c.SERVER_PORT = parseInt(u.port);
 
-l.debug("Loaded config:", c);
+l.debug("Config loaded", c);
 
 export default c!;

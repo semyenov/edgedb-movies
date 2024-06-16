@@ -2,7 +2,6 @@
   // "extends": "@tsconfig/node14/tsconfig.json",
   "compilerOptions": {
     "lib": [
-      "dom",
       "ESNext"
     ],
     "typeRoots": [
@@ -11,8 +10,6 @@
     ],
     "types": [
       "node",
-      "edgedb",
-      "h3",
     ],
     "target": "ESNext",
     "module": "ESNext",

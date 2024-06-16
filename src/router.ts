@@ -98,9 +98,9 @@ const getCallback = eventHandler(async (event) => {
     return;
   }
 
-  const tokenData: {
+  const tokenData = await tokenRes.json() as {
     auth_token: string;
-  } = await tokenRes.json();
+  };
 
   if (!tokenData.auth_token) {
     setResponseStatus(event, 400);

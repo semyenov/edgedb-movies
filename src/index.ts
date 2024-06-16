@@ -1,28 +1,13 @@
 // src/index.ts
-import { createServer } from "node:http";
-import { createApp, eventHandler, toNodeListener } from "h3";
+import { toNodeListener } from "h3";
 
 import c from "./config";
 import l from "./logger";
-import r from "./router";
+import s from "./server";
 
-const a = createApp()
-  .use(r)
-  .use(
-    "*",
-    eventHandler((event) => {
-      l.debug(`Request: ${event.node.req.url}`);
-    }),
-  );
-
-const listener = toNodeListener(a);
-const server = createServer(listener);
-
-server.listen({
+s.listen({
   host: c.SERVER_HOST,
   port: c.SERVER_PORT,
 }, () => {
   l.info(`Listening on ${c.BASE_URL}`);
 });
-
-export default a;
